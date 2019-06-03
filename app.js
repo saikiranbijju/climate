@@ -16,8 +16,9 @@ window.addEventListener('load',()=>{
                 })
             .then(data =>{
                 console.log(data);
+                 let cal = (data.currently.temperature - 32) * (5/9);
                 
-                document.querySelector(".temperatue-degree").textContent = (data.currently.temperature - 32) * (5/9);
+                document.querySelector(".temperatue-degree").textContent = math.floor(cal) ;
                 document.querySelector(".temperatue-description").textContent = data.currently.summary;
                 document.querySelector(".location-timezone").textContent = data.timezone;
                 
